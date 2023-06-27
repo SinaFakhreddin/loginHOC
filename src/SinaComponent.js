@@ -1,12 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import HOCComponent from "./HOCComponent";
 
-const SinaComponent = () => {
+const SinaComponent = ({ money, increaseMoney }) => {
   return (
     <div>
-      <h2>Sina Has $20</h2>
-      <button>increase Sina's Money</button>
+      <h2>Sina Has ${money}</h2>
+      <button onClick={increaseMoney}>increase Sina's Money</button>
     </div>
   );
 };
 
-export default SinaComponent;
+export default HOCComponent(SinaComponent);
